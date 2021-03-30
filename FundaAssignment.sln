@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FundaAssignment.WebApi", "FundaAssignment.WebApi\FundaAssignment.WebApi.csproj", "{F7600BA2-5C2B-4E17-AC9E-72CED50B1ED4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClientApp", "ClientApp", "{6ABF3AAC-EA00-4E58-BC07-CE7AEA6B1ED0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FundaAssignment.ClientApp", "FundaAssignment.ClientApp", "{6ABF3AAC-EA00-4E58-BC07-CE7AEA6B1ED0}"
 	ProjectSection(SolutionItems) = preProject
-		ClientApp\index.html = ClientApp\index.html
+		FundaAssignment.ClientApp\index.html = FundaAssignment.ClientApp\index.html
 	EndProjectSection
 EndProject
 Global
