@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1>Top 10 Real Estate Agents of Amsterdam</h1>
+    <input type="checkbox" value="0" id="chbWithGarden">Only with garden</input>
+    <input type="button" onclick="getRealEstateAgents()" value="Get List"/>
+    <ol id="realStateList">
+    </ol>
+</body>
+</html>
+
+<script>
+    
+    function getRealEstateAgents() {
+        let request = new XMLHttpRequest();
+        var list = document.getElementById("realStateList");
+        list.innerHTML = 'Loading....';
+        if (document.getElementById('chbWithGarden').checked) {
+            console.log("Only with Garden")
+            request.open("GET", "http://localhost:55123/RealEstateAgent/1");
+        } else {
+            console.log("All")
+            request.open("GET", "http://localhost:55123/RealEstateAgent/0");
+        }
+        
+        request.responseType = 'json';
+
+        request.onload = function () {
+            if (request.status == 200) {
+                list.innerHTML = '';
+                var realStateAgent = request.response;
+                for (var i = 0; i < realStateAgent.length; i++) {
+                    list.innerHTML += '<li>' + realStateAgent[i].name + ' </li>'
+                }
+            } else {
+                list.innerHTML = 'Error please try again';
+                alert(request.response.message)
+            }
+        };
+        request.onerror = function () {
+            list.innerHTML = 'Error please try again';
+            alert("Error")
+        }
+        request.send();
+    }
+    
+</script>
